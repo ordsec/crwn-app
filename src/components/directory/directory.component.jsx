@@ -28,11 +28,13 @@ export default class Directory extends Component {
         {
           title: 'digital cameras',
           imgUrl: 'https://i.imgur.com/hK861bQ.jpg',
+          size: 'large',
           id: 4
         },
         {
           title: 'film cameras',
-          imgUrl: 'https://i.imgur.com/BnakT3h.jpg',
+          imgUrl: 'https://i.imgur.com/ynqHZLy.jpg',
+          size: 'large',
           id: 5
         }
       ]
@@ -43,11 +45,12 @@ export default class Directory extends Component {
     return (
       <div className='directory-menu'>
         {
-          this.state.sections.map(({ title, imageUrl, id }) => (
+          this.state.sections.map(({ title, imgUrl, id, size }) => (
             <MenuItem 
               key={id}
               title={title}
-              url={imageUrl}
+              url={imgUrl}
+              size={size}
             />
           ))
         }
