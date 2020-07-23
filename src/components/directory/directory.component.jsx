@@ -27,7 +27,7 @@ export default class Directory extends Component {
         },
         {
           title: 'digital cameras',
-          imgUrl: 'https://i.imgur.com/hK861bQ.jpg',
+          imgUrl: 'https://i.imgur.com/29wB4x9.jpg',
           size: 'large',
           id: 4
         },
