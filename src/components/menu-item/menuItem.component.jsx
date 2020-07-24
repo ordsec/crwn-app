@@ -1,13 +1,18 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './menuItem.styles.scss';
 
-const MenuItem = ({ title, url, size }) => (
-  <div className={`${size} menu-item`}>
+const MenuItem = ({ title, imgUrl, size, history, pageUrl, match }) => (
+  <div 
+    className={`${size} menu-item`}
+    // match holds the current url
+    onClick={() => history.push(`${match.url}${pageUrl}`)}
+  >
     <div 
       className='background-image'
       style={{
-        backgroundImage: `url(${url})`
+        backgroundImage: `url(${imgUrl})`
       }}
     >
 
@@ -19,4 +24,9 @@ const MenuItem = ({ title, url, size }) => (
   </div>
 );
 
-export default MenuItem;
+// this returns an upgraded MenuItem component
+// with access to history/match/etc. props
+// that react-router-dom provides,
+// without having to drill those props
+// all the way down from App.js
+export default withRouter(MenuItem);
