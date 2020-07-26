@@ -166,93 +166,93 @@ const SHOP_DATA = [
   },
   {
     id: 4,
-    title: 'Womens',
-    routeName: 'womens',
+    title: 'Digital cameras',
+    routeName: 'digitalcameras',
     items: [
       {
         id: 1,
-        name: 'Blue Tanktop',
+        name: 'Canon EOS R5 Mirrorless Camera & 24-105 f/4L lens',
         imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
-        price: 25
+        price: 4999
       },
       {
         id: 2,
-        name: 'Floral Blouse',
+        name: 'Sony Alpha a7R IV Mirrorless Camera (Body)',
         imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
-        price: 20
+        price: 3498
       },
       {
         id: 3,
-        name: 'Floral Dress',
+        name: 'Canon EOS 1DX Mark III DSLR Camera (Body)',
         imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
-        price: 80
+        price: 6499
       },
       {
         id: 4,
-        name: 'Red Dots Dress',
+        name: 'Fujifilm GFX 50R Medium Format Mirrorless Camera (Body)',
         imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
-        price: 80
+        price: 3499
       },
       {
         id: 5,
-        name: 'Striped Sweater',
+        name: 'Leica Q2 Digital Mirrorless Camera',
         imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
-        price: 45
+        price: 4995
       },
       {
         id: 6,
-        name: 'Yellow Track Suit',
+        name: 'Leica M10-R Digital Rangefinder Camera',
         imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
-        price: 135
+        price: 8295
       },
       {
         id: 7,
-        name: 'White Blouse',
+        name: 'Hasselblad H6D-400c MS Medium Format DSLR Camera',
         imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
-        price: 20
+        price: 47995
       }
     ]
   },
   {
     id: 5,
-    title: 'Mens',
-    routeName: 'mens',
+    title: 'Film Cameras',
+    routeName: 'filmcameras',
     items: [
       {
         id: 1,
-        name: 'Camo Down Vest',
+        name: 'Contax G2 35mm Rangefinder Camera & Biogon 28mm f/2.8 lens',
         imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
-        price: 325
+        price: 1299
       },
       {
         id: 2,
-        name: 'Floral T-shirt',
+        name: 'Canon AE-1 35mm DSLR Camera & FD 28 f/2.8 lens',
         imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
-        price: 20
+        price: 300
       },
       {
         id: 3,
-        name: 'Black & White Longsleeve',
+        name: 'Leica M6 0.72x 35mm Rangefinder Camera',
         imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
-        price: 25
+        price: 2700
       },
       {
         id: 4,
-        name: 'Pink T-shirt',
+        name: 'Fujifilm GA645 6x4.5 Medium Format Camera',
         imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
-        price: 25
+        price: 750
       },
       {
         id: 5,
-        name: 'Jean Long Sleeve',
+        name: 'Plaubel Makina 670 6x7 Medium Format Rangefinder Camera',
         imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
-        price: 40
+        price: 2600
       },
       {
         id: 6,
-        name: 'Burgundy T-shirt',
+        name: 'Mamiya RZ67 Pro II Camera & Sekor Z 110mm f/2.8 Lens',
         imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
-        price: 25
+        price: 2100
       }
     ]
   }
