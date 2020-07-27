@@ -129,37 +129,37 @@ const SHOP_DATA = [
       {
         id: 1,
         name: 'Gitzo GT2542 Carbon Fiber Tripod',
-        imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
+        imageUrl: 'https://i.ibb.co/8Bb143n/gitzo-tripod.jpg',
         price: 1330
       },
       {
         id: 2,
         name: 'Pelican 1510TP Waterproof Case',
-        imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
+        imageUrl: 'https://i.ibb.co/KjsrrW2/pelican-case.jpg',
         price: 261
       },
       {
         id: 3,
         name: 'Peak Design SL-BK-3 Camera Strap',
-        imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+        imageUrl: 'https://i.ibb.co/wNN6Kjq/peak-design-strap.jpg',
         price: 90
       },
       {
         id: 4,
         name: 'Peak Design Everyday Backpack (30L)',
-        imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
+        imageUrl: 'https://i.ibb.co/X781n0M/peak-design-pack.jpg',
         price: 233
       },
       {
         id: 5,
         name: 'B+W 77mm XS-Pro UV Haze MRC-Nano 010M Filter',
-        imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+        imageUrl: 'https://i.ibb.co/fqV7ZCp/bw-filter.jpg',
         price: 63
       },
       {
         id: 6,
         name: 'SanDisk 1TB Extreme UHS-I SDXC Memory Card',
-        imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+        imageUrl: 'https://i.ibb.co/H7gyQkR/sandisk-sd.jpg',
         price: 399
       }
     ]
@@ -172,43 +172,43 @@ const SHOP_DATA = [
       {
         id: 1,
         name: 'Canon EOS R5 Mirrorless Camera & 24-105 f/4L lens',
-        imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+        imageUrl: 'https://i.ibb.co/0f2PKBr/canon-r5-24-105.jpg',
         price: 4999
       },
       {
         id: 2,
         name: 'Sony Alpha a7R IV Mirrorless Camera (Body)',
-        imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+        imageUrl: 'https://i.ibb.co/mbgFrgr/sony-a7r-iv.jpg',
         price: 3498
       },
       {
         id: 3,
         name: 'Canon EOS 1DX Mark III DSLR Camera (Body)',
-        imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+        imageUrl: 'https://i.ibb.co/Fb3rbzZ/canon-1dx-iii.jpg',
         price: 6499
       },
       {
         id: 4,
         name: 'Fujifilm GFX 50R Medium Format Mirrorless Camera (Body)',
-        imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+        imageUrl: 'https://i.ibb.co/K5qn0F7/fuji-gfx-50r.jpg',
         price: 3499
       },
       {
         id: 5,
         name: 'Leica Q2 Digital Mirrorless Camera',
-        imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
+        imageUrl: 'https://i.ibb.co/T40x4Nr/leica-q2.jpg',
         price: 4995
       },
       {
         id: 6,
         name: 'Leica M10-R Digital Rangefinder Camera',
-        imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
+        imageUrl: 'https://i.ibb.co/TRHc9QJ/leica-m10-r.jpg',
         price: 8295
       },
       {
         id: 7,
         name: 'Hasselblad H6D-400c MS Medium Format DSLR Camera',
-        imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
+        imageUrl: 'https://i.ibb.co/Bqf2yKm/hasselblad-h6d.jpg',
         price: 47995
       }
     ]
@@ -221,37 +221,37 @@ const SHOP_DATA = [
       {
         id: 1,
         name: 'Contax G2 35mm Rangefinder Camera & Biogon 28mm f/2.8 lens',
-        imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
+        imageUrl: 'https://i.ibb.co/nL46Bp8/contax-g2.jpg',
         price: 1299
       },
       {
         id: 2,
         name: 'Canon AE-1 35mm DSLR Camera & FD 28 f/2.8 lens',
-        imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
+        imageUrl: 'https://i.ibb.co/BcVzjnc/canon-ae-1.jpg',
         price: 300
       },
       {
         id: 3,
         name: 'Leica M6 0.72x 35mm Rangefinder Camera',
-        imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+        imageUrl: 'https://i.ibb.co/mJ0YmMD/leica-m6.jpg',
         price: 2700
       },
       {
         id: 4,
         name: 'Fujifilm GA645 6x4.5 Medium Format Camera',
-        imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
+        imageUrl: 'https://i.ibb.co/t3tk42M/fuji-ga645.jpg',
         price: 750
       },
       {
         id: 5,
         name: 'Plaubel Makina 670 6x7 Medium Format Rangefinder Camera',
-        imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
+        imageUrl: 'https://i.ibb.co/5TqY6hy/makina-670.jpg',
         price: 2600
       },
       {
         id: 6,
         name: 'Mamiya RZ67 Pro II Camera & Sekor Z 110mm f/2.8 Lens',
-        imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+        imageUrl: 'https://i.ibb.co/4PWkpBs/mamiya-rz67-ii.jpg',
         price: 2100
       }
     ]
