@@ -15,6 +15,17 @@ const config = {
 
 firebase.initializeApp(config);
 
+// receives the auth object that comes back
+// from firebase upon signing in with google
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`),
+        snapShot = await userRef.get();
+
+  console.log(snapShot);
+}
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 

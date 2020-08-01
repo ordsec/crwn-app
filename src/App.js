@@ -29,6 +29,10 @@ export default class App extends Component {
     // always knows who signed in last.
     // it returns a function we can call
     // to unsubscribe and prevent memory leaks
+    
+    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+    //   createUserProfileDocument(user);
+    // });
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
     });
