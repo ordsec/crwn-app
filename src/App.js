@@ -7,7 +7,7 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInSignUp from './pages/sign-in-sign-up/signInSignUp.component';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 export default class App extends Component {
   constructor(props) {
@@ -29,13 +29,13 @@ export default class App extends Component {
     // always knows who signed in last.
     // it returns a function we can call
     // to unsubscribe and prevent memory leaks
-    
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
-    //   createUserProfileDocument(user);
-    // });
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
     });
+    // this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+    //   this.setState({ currentUser: user });
+    // });
   }
 
   componentWillUnmount() {
