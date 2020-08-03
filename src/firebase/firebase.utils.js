@@ -15,14 +15,19 @@ const config = {
 
 firebase.initializeApp(config);
 
-// receives the auth object that comes back
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+// receives the user object that comes back
 // from firebase upon signing in with google
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`),
-        snapShot = await userRef.get();
+  // assume the user already exists in firebase
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
 
+  // if the user doesn't exist, persist
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -42,10 +47,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 }
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-
 const provider = new firebase.auth.GoogleAuthProvider();
+
 // make the google auth pop-up appear
 provider.setCustomParameters({ prompt: 'select_account' });
 
