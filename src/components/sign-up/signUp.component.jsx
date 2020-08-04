@@ -19,6 +19,45 @@ export default class SignUp extends Component {
     };
   }
 
+  // here we're manually creating a record in firebase
+  handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { displayName, email, password, confirmPassword } = this.state;
+
+    if (password !== confirmPassword) {
+      return alert('Passwords don\'t match!');
+    }
+
+    try {
+      // create user in firebase and get back the user object
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email, 
+        password
+      );
+
+      await createUserProfileDocument(user, { displayName });
+
+      // if the profile creation succeeds, clear the form
+      this.setState({
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  handleChange = e => {
+    const { name, value } = e.target;
+
+    this.setState = {
+      [name]: value
+    };
+  }
+
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
 
