@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import FormInput from '../form-input/formInput.component';
 import CustomButton from '../custom-button/customButton.component';
 
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+
 import './signIn.styles.scss';
 
 export default class SignIn extends Component {
@@ -15,13 +17,21 @@ export default class SignIn extends Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
-    this.setState({
-      email: '',
-      password: ''
-    });
+    const { email, password } = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+
+      this.setState({
+        email: '',
+        password: ''
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   handleChange = e => {
@@ -53,8 +63,16 @@ export default class SignIn extends Component {
             handleChange={this.handleChange}
             required  
           />
-
-          <CustomButton type='submit'>Heck yea!</CustomButton>
+          <div className='buttons'>
+            <CustomButton type='submit'>Heck yea!</CustomButton>
+            <CustomButton
+              type='button'
+              onClick={signInWithGoogle}
+              isGoogleSignIn
+            >
+              I want Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
