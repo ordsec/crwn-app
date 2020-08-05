@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './App.css';
 
@@ -9,19 +10,14 @@ import Header from './components/header/header.component';
 import SignInSignUp from './pages/sign-in-sign-up/signInSignUp.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
+import { setCurrentUser } from './redux/user/user.actions';
 
-    this.state = {
-      currentUser: null
-    };
-  }
-
+class App extends Component {
   unsubscribeFromAuth = null;
 
   // enable user session persistence
   componentDidMount() {
+    const { setCurrentUser } = this.props;
     // this is a subscription. the callback
     // takes a function where the argument
     // is the user auth state. this allows 
@@ -36,18 +32,14 @@ export default class App extends Component {
 
         // listen to user data changes
         userRef.onSnapshot(snapshot => {
-          this.setState({
-            currentUser: {
-              id: snapshot.id,
-              ...snapshot.data()
-            }
+          setCurrentUser({
+            id: snapshot.id,
+            ...snapshot.data()
           });
         });
       }
 
-      this.setState({
-        currentUser: userAuth
-      });
+      setCurrentUser(userAuth);
     });
   }
 
@@ -58,7 +50,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
@@ -68,3 +60,9 @@ export default class App extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(App);
