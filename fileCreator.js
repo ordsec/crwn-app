@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// ARGS[0] is where the folder needs to be created 
+// ARGS[0] is where the folder/files needs to be created 
 // e.g. redux or components
 
 // ARGS[1] is the name of the folder to create
@@ -40,7 +40,7 @@ const createComponentFiles = name => {
     `import React from 'react';
     
 import './${fileName}.styles.scss';`
-    );
+  );
 
   fs.writeFile(
     `${path}/${fileName}.component.jsx`, 
@@ -68,7 +68,7 @@ node fileCreator.js [folder] [name] [--camelize]
 'name' is required and can be anything you want.
 
 '--camelize' is optional if you prefer to use camelCase for file names.
-`
+`;
 
 //////////////// MAIN /////////////////
 
