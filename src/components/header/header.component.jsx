@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
+
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cartDropdown.component';
 
 import './header.styles.scss';
 
@@ -28,8 +32,15 @@ const Header = ({ currentUser }) => (
           <Link className='option' to='/signin'>SIGN IN</Link>
         )
       }
+      <CartIcon />
     </div>
+    <CartDropdown />
   </div>
 );
 
-export default Header;
+// state is the top-level root reducer
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+
+export default connect(mapStateToProps)(Header);

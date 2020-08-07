@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './App.css';
 
@@ -9,19 +10,14 @@ import Header from './components/header/header.component';
 import SignInSignUp from './pages/sign-in-sign-up/signInSignUp.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
+import { setCurrentUser } from './redux/user/user.actions';
 
-    this.state = {
-      currentUser: null
-    };
-  }
-
+class App extends Component {
   unsubscribeFromAuth = null;
 
   // enable user session persistence
   componentDidMount() {
+    const { setCurrentUser } = this.props;
     // this is a subscription. the callback
     // takes a function where the argument
     // is the user auth state. this allows 
@@ -36,18 +32,14 @@ export default class App extends Component {
 
         // listen to user data changes
         userRef.onSnapshot(snapshot => {
-          this.setState({
-            currentUser: {
-              id: snapshot.id,
-              ...snapshot.data()
-            }
+          setCurrentUser({
+            id: snapshot.id,
+            ...snapshot.data()
           });
         });
       }
 
-      this.setState({
-        currentUser: userAuth
-      });
+      setCurrentUser(userAuth);
     });
   }
 
@@ -56,15 +48,44 @@ export default class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.props;
+
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
-          <Route path='/signin' component={SignInSignUp} />
+          <Route 
+            exact 
+            path='/signin' 
+            render={
+              () => currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <SignInSignUp />
+              )
+            }
+          />
         </Switch>
       </div>
     );
   }
 }
+
+// get access to current user in order to
+// render the sign-in/sign-up conditionally
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
+// get access to the setCurrentUser action
+// to fire once a user logs in
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(App);
