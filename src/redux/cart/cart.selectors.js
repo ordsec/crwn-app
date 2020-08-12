@@ -16,6 +16,11 @@ export const selectCartItems = createSelector(
   cart => cart.cartItems
 );
 
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
+);
+
 // EVEN MORE SPECIFIC
 // here we're passing what's stored in selectCartItems
 // because we rarely need a large piece of state
