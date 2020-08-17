@@ -9,7 +9,15 @@ export const addToCart = item => ({
   payload: item
 });
 
+// remove the entire item at checkout,
+// regardless of quantity
 export const removeFromCart = item => ({
   type: CartActionTypes.REMOVE_FROM_CART,
+  payload: item
+});
+
+// decrease quantity at checkout
+export const removeItem = item => ({
+  type: CartActionTypes.REMOVE_ITEM,
   payload: item
 });
