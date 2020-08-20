@@ -17,7 +17,7 @@ export const selectCollections = createSelector(
 
 // the param comes from the URL
 export const selectCollection = collectionParam => {
-  createSelector(
+  return createSelector(
     [selectCollections],
     collections => collections.find(
       collection => collection.id === COLLECTION_ID_MAP[collectionParam]
