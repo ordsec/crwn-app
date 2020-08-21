@@ -7,32 +7,32 @@ const INITIAL_STATE = {
     {
       title: 'lenses',
       imgUrl: 'https://i.imgur.com/UiHbkxu.jpg',
-      pageUrl: '',
+      pageUrl: 'shop/lenses',
       id: 1
     },
     {
       title: 'film',
       imgUrl: 'https://i.imgur.com/eje9Qe5.jpg',
-      pageUrl: '',
+      pageUrl: 'shop/film',
       id: 2
     },
     {
       title: 'accessories',
       imgUrl: 'https://i.imgur.com/hossXyM.jpg',
-      pageUrl: '',
+      pageUrl: 'shop/accessories',
       id: 3
     },
     {
       title: 'digital cameras',
       imgUrl: 'https://i.imgur.com/29wB4x9.jpg',
-      pageUrl: '',
+      pageUrl: 'shop/digitalcameras',
       size: 'large',
       id: 4
     },
     {
       title: 'film cameras',
       imgUrl: 'https://i.imgur.com/ynqHZLy.jpg',
-      pageUrl: 'filmcameras',
+      pageUrl: 'shop/filmcameras',
       size: 'large',
       id: 5
     }
